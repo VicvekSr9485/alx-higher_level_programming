@@ -12,7 +12,7 @@ Texts are printed with 2 new lines after each of these characters: ``.``, ``?`` 
 ::
 
     >>> text_indentation = __import__('5-text_indentation').text_indentation
-    >>> text_indentation("Hey guys"):
+    >>> text_indentation("Hey guys")
     Hey guys
     <BLANKLINE>
 
@@ -25,7 +25,7 @@ No spaces are printed at the beginnig of each line
 
 ::
 
-    >>>text_indentation("           ")
+    >>> text_indentation("           ")
 
 Similarly, no spaces are printed at the end of each line
 
@@ -56,7 +56,7 @@ new lines within a string are printed a normal blankline
 
 ::
 
-    >>> text_indentation("we are printing a new line:\n wow it works!")
+    >>> text_indentation("we are printing a new line:\nwow it works!")
     we are printing a new line:
     <BLANKLINE>
     <BLANKLINE>
