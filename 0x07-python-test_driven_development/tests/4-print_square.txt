@@ -7,7 +7,7 @@ This module defines a square-printing function ``def print_square(size)``.
 Usage
 =====
 
-Squares are printed using the ``#`` character. The argument ``size`` represennt the 
+Squares are printed using the ``#`` character. The argument ``size`` represents the 
 height and width of the square.
 
 ::
