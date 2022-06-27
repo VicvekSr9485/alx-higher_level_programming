@@ -94,19 +94,3 @@ Note that type-checking is done before value-checking.
     >>> print_square(-6.7)
     Traceback (most recent call last):
     TypeError: size must be an integer
-
-At least one argument must be provided.
-
-::
-
-    >>> print_square()
-    Traceback (most recent call last):
-    TypeError: print_square() missing one required positional argument: 'size'
-
-Only one argument must be provided.
-
-::
-
-    >>> print_square(4, 12)
-    Traceback (most recent last call):
-    TypeError: print_square() takes 1 positional argument but 2 were given
