@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" Defines a Rectangle class """
+""" Defines a Rectangle class
+    Initializing number_of_instances to 0
+    Initializing print_symbol to #
+ """
 
 
 class Rectangle:
@@ -13,7 +16,7 @@ class Rectangle:
         """ a class method that returns a new Rectangle instance
         with width == height == size
         """
-        return cls(size, size)
+        return Rectangle(size, size)
 
     def __init__(self, width=0, height=0,):
         """ this initialize the instances """
