@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" listing available attributes and methods of a class """
+""" listing available attributes and methods of a class
+"""
 
 
 def lookup(obj):
