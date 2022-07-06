@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+""" reading file from stdin
+"""
+
+
 import sys
 
 
