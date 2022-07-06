@@ -6,37 +6,37 @@
 import sys
 
 
-def print_status():
-    '''
-        Printing the status of the request
-    '''
-    counter = 0
-    size = 0
-    file_size = 0
-    status_codes = {"200": 0, "301": 0, "400": 0, "401": 0,
-                    "403": 0, "404": 0, "405": 0, "500": 0}
+file_size = 0
+status_tally = {"200": 0, "301": 0, "400": 0, "401": 0,
+                "403": 0, "404": 0, "405": 0, "500": 0}
+i = 0
+try:
+    for line in sys.stdin:
+        tokens = line.split()
+        if len(tokens) >= 2:
+            a = i
+            if tokens[-2] in status_tally:
+                status_tally[tokens[-2]] += 1
+                i += 1
+            try:
+                file_size += int(tokens[-1])
+                if a == i:
+                    i += 1
+            except (TypeError):
+                if a == i:
+                    pass
+        if i % 10 == 0:
+            print("File size: {:d}".format(file_size))
+            for key, value in sorted(status_tally.items()):
+                if value:
+                    print("{:s}: {:d}".format(key, value))
+    print("File size: {:d}".format(file_size))
+    for key, value in sorted(status_tally.items()):
+        if value:
+            print("{:s}: {:d}".format(key, value))
 
-    for l in sys.stdin:
-        line = l.split()
-        try:
-            size += int(line[-1])
-            code = line[-2]
-            status_codes[code] += 1
-        except:
-            continue
-        if counter == 9:
-            print("File size: {}".format(size))
-            for key, val in sorted(status_codes.items()):
-                if (val != 0):
-                    print("{}: {}".format(key, val))
-            counter = 0
-        counter += 1
-    if counter < 9:
-        print("File size: {}".format(size))
-        for key, val in sorted(status_codes.items()):
-            if (val != 0):
-                print("{}: {}".format(key, val))
-
-
-if __name__ == "__main__":
-    print_status()
+except KeyboardInterrupt:
+    print("File size: {:d}".format(file_size))
+    for key, value in sorted(status_tally.items()):
+        if value:
+            print("{:s}: {:d}".format(key, value))
