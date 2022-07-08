@@ -86,3 +86,9 @@ class Rectangle(Base):
         """ This method returns the area of the rectangle
         """
         return self.__width * self.__height
+
+    def display(self):
+        """ This method prints the rectangle instance
+        with character '#'
+        """
+        print()
