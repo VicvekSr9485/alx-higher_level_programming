@@ -101,7 +101,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}" \
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, id=None, width=None, height=None, x=None, y=None):
+    def args_update(self, id=None, width=None, height=None, x=None, y=None):
         """ Updating the class Rectangle by assigning arguments
         to each attributes """
         if id is not None:
@@ -114,3 +114,12 @@ class Rectangle(Base):
             self.x = x
         if y is not None:
             self.y = y
+
+    def update(self, *args, **kwargs):
+        """ This method updates instance attributes via
+        no-keyword & keyword arguments
+        """
+        if args:
+            self.args_update(*args)
+        else:
+            self.args_update(**kwargs)
