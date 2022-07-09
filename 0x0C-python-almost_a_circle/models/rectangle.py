@@ -91,4 +91,6 @@ class Rectangle(Base):
         """ This method prints the rectangle instance
         with character '#'
         """
-        print()
+        rectangle = '\n' * self.y + \
+            (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(rectangle, end='')
