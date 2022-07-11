@@ -83,11 +83,11 @@ class Base:
         file_name = "{}.csv".format(cls.__name__)
         if list_objs is not None:
             if cls is Rectangle:
-                 list_objs = [[o.id, o.width, o.height, o.x, o.y]
-                                for o in list_objs]
+                list_objs = [[o.id, o.width, o.height, o.x, o.y]
+                             for o in list_objs]
             else:
                 list_objs = [[o.id, o.size, o.x, o.y]
-                                for o in list_objs]
+                             for o in list_objs]
         with open(file_name, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerows(list_objs)
@@ -98,7 +98,7 @@ class Base:
         """
         from models.rectangle import Rectangle
         from models.square import Square
-        
+
         ret = []
         with open('{}.csv'.format(cls.__name__), "r", newline="",
                   encoding="utf-8") as f:

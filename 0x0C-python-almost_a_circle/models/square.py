@@ -49,6 +49,7 @@ class Square(Rectangle):
             self.args_update(*args)
         else:
             self.args_update(**kwargs)
+
     def to_dictionary(self):
         """ Returns the dictionary representation of a class square
         """
