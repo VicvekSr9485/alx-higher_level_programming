@@ -36,4 +36,5 @@ JavaScript - Warm up Project at Alx-holberton Coding School
 * $ sudo apt-get install -y nodejs
 
 # Install semi-standard
+# [DOCUMENTATION](https://alx-intranet.hbtn.io/rltoken/35q5Pc6A6KWPyd3kGeRQFg)
 * $ sudo npm install semistandard --global
