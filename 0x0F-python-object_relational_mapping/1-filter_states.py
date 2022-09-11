@@ -19,9 +19,11 @@ if __name__ == "__main__":
         db=args[3],
         charset="utf8")
     cursor = dt.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' \
+                   ORDER BY states.id")
     rows = cursor.fetchall()
     for row in rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
     cursor.close()
     dt.close()

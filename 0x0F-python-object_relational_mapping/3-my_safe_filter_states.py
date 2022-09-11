@@ -18,10 +18,13 @@ if __name__ == "__main__":
         passwd=args[2],
         db=args[3],
         charset="utf8")
+    newName = args[4]
     cursor = dt.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name = %s\
+                   ORDER BY states.id", (newName,))
     rows = cursor.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == newName:
+            print(row)
     cursor.close()
     dt.close()
