@@ -1,14 +1,22 @@
 #!/usr/bin/node
-const axios = require('axios');
-axios.get('https://swapi-api.hbtn.io/api/films/' + process.argv[2])
-  .then(function (response) {
-    for (let i = 0; i < response.data.characters.length; i++) {
-      axios.get(response.data.characters[i])
-        .then(function (response) {
-          console.log(response.data.name);
-        });
-    }
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+const request = require('request');
+
+const movieId = process.argv[2];
+const endpoint = 'https://swapi-api.hbtn.io/api/films/' + movieId;
+
+request.get(endpoint, function (error, response, body) {
+  if (error) {
+    console.error(error);
+    return;
+  }
+  const data = JSON.parse(body).characters;
+  for (const url of data) {
+    request.get(url, (err, res, body) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(JSON.parse(body).name);
+    });
+  }
+});
