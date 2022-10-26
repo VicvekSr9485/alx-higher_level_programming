@@ -11,6 +11,7 @@
 * [Javascript in the browser](https://alx-intranet.hbtn.io/concepts/3)
 * [Dealing with data statically versus dynamically](https://alx-intranet.hbtn.io/concepts/35)
 
+![static_dynamic_data](https://user-images.githubusercontent.com/85700432/198132787-682a6ec9-cf50-465d-9aac-2310ecfc3576.png)
 
 # More Info
 ## Import JQuery
