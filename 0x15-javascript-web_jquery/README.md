@@ -7,6 +7,9 @@
 * Semistandard
 * JQuery version 3.x
 
+# Concepts
+* [Javascript in the browser](https://alx-intranet.hbtn.io/concepts/3)
+* [Dealing with data statically versus dynamically](https://alx-intranet.hbtn.io/concepts/35)
 # More Info
 ## Import JQuery
 <head>
